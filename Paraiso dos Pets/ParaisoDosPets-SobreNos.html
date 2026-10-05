@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Paraíso dos Pets</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f4df;
+            color: #573925;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+            background-color: #faf8e9;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 25px;
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            z-index: 10;
+        }
+
+        .logo {
+            width: 120px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 110px;
+            max-height: 50px;
+            object-fit: contain;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+        }
+
+        header nav a {
+            font-size: 13px;
+            color: #59402f;
+            transition: 0.2s;
+        }
+
+        header nav a:hover {
+            color: #397967;
+        }
+
+        #carrinhoLogo {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #carrinhoLogo img {
+            width: 23px;
+            height: 23px;
+            object-fit: contain;
+        }
+
+        #Perfil {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d5d8a8;
+            border: 2px solid #a8a87a;
+            overflow: hidden;
+        }
+
+        #Perfil img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        main {
+            padding-top: 70px;
+        }
+
+        .sobrePagina {
+            width: 100%;
+            min-height: 460px;
+            background-image:
+                linear-gradient(
+                    rgba(248, 244, 223, 0.65),
+                    rgba(248, 244, 223, 0.65)
+                ),
+                url("img/backgroundPatas.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 60px 7% 35px;
+        }
+
+        .sobreIntroducao {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 35px;
+        }
+
+        .sobreFoto {
+            width: 205px;
+            height: 215px;
+            object-fit: cover;
+            border-radius: 28px;
+        }
+
+        .sobreTexto {
+            width: 480px;
+        }
+
+        .sobreTexto h1 {
+            font-size: 25px;
+            font-weight: 400;
+            color: #573925;
+            margin-bottom: 8px;
+        }
+
+        .sobreTexto p {
+            font-size: 17px;
+            line-height: 20px;
+            color: #624835;
+            text-align: justify;
+        }
+
+        .valores {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 45px;
+        }
+
+        .valorCard {
+            min-height: 115px;
+            background-color: rgba(255, 250, 239, 0.9);
+            border: 1px solid #d99b72;
+            border-radius: 14px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .valorTopo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 7px;
+        }
+
+        .valorIcone {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #d98d69;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 17px;
+        }
+
+        .valorCard h3 {
+            font-size: 11px;
+            color: #624835;
+            line-height: 13px;
+        }
+
+        .valorCard p {
+            font-size: 9px;
+            line-height: 12px;
+            color: #806f62;
+        }
+
+        footer {
+            width: 100%;
+            min-height: 200px;
+            background-color: #624835;
+            color: #fff9e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 120px;
+            padding: 35px 60px;
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 25px;
+            left: 11%;
+            right: 11%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        footer > img {
+            width: 130px;
+            max-height: 100px;
+            object-fit: contain;
+        }
+
+        footer nav {
+            display: grid;
+            grid-template-columns: 120px 150px;
+            column-gap: 25px;
+            row-gap: 12px;
+        }
+
+        footer nav a {
+            font-size: 12px;
+            color: #fff9e8;
+            transition: 0.2s;
+        }
+
+        footer nav a:hover {
+            color: #d8d99f;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            <a href="ParaisoDosPets-HomePage.html">
+                <img src="img/iconeSite.png">
+            </a>
+        </div>
+
+        <nav>
+
+            <a href="paraisoDosPets - Servicos.html">
+                Serviços
+            </a>
+
+            <a href="ParaisoDosPets-Produtos.html">
+                Produtos
+            </a>
+
+            <a href="ParaisoDosPets-SobreNos.html">
+                Sobre nós
+            </a>
+
+            <a href="ParaisoDosPets-Carrinho.html" id="carrinhoLogo">
+                <img src="img/carrinho.png">
+            </a>
+
+            <a href="ParaisoDosPets-Perfil.html" id="Perfil">
+                <img src="img/icone perfil.png">
+            </a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="sobrePagina">
+
+            <div class="sobreIntroducao">
+
+                <img
+                    class="sobreFoto"
+                    src="img/SobreNosFoto.png"
+                    alt="Foto dos responsáveis pelo Paraíso dos Pets"
+                >
+
+                <div class="sobreTexto">
+
+                    <h1>
+                        Quem somos nós?
+                    </h1>
+
+                    <p>
+                        Somos um casal apaixonado por animais e pela
+                        saúde deles! Somos médicos veterinários e
+                        tosadores, e unimos nossas habilidades para
+                        oferecer um atendimento completo, com cuidado,
+                        respeito, e muuuito carinho!
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="valores">
+
+                <div class="valorCard">
+
+                    <div class="valorTopo">
+
+                        <div class="valorIcone">
+                            ●
+                        </div>
+
+                        <h3>
+                            Cuidado<br>
+                            de verdade
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Tratamos cada pet como se fosse da
+                        nossa própria família.
+                    </p>
+
+                </div>
+
+                <div class="valorCard">
+
+                    <div class="valorTopo">
+
+                        <div class="valorIcone">
+                            ♡
+                        </div>
+
+                        <h3>
+                            Saúde e<br>
+                            bem-estar
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Oferecemos atendimento veterinário
+                        e serviços com foco na qualidade
+                        de vida do seu pet.
+                    </p>
+
+                </div>
+
+                <div class="valorCard">
+
+                    <div class="valorTopo">
+
+                        <div class="valorIcone">
+                            ✂
+                        </div>
+
+                        <h3>
+                            Estética com<br>
+                            segurança
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Nossos serviços de tosa são feitos
+                        com todo cuidado, respeitando o
+                        perfil e a necessidade de cada pet.
+                    </p>
+
+                </div>
+
+                <div class="valorCard">
+
+                    <div class="valorTopo">
+
+                        <div class="valorIcone">
+                            ⌂
+                        </div>
+
+                        <h3>
+                            Ambiente<br>
+                            acolhedor
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Um espaço pensado para que seu pet
+                        se sinta seguro, confortável e sempre
+                        bem-vindo.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <img src="img/logoFooter.png">
+
+        <nav>
+
+            <a href="#" id="SobreFt">
+                Sobre nós
+            </a>
+
+            <a href="#" id="AjudaFt">
+                Ajuda
+            </a>
+
+            <a href="#" id="EntregaFt">
+                Entrega
+            </a>
+
+            <a href="#" id="FaleConoscoFt">
+                Fale conosco
+            </a>
+
+            <a href="#" id="TrabConoscoFt">
+                Trabalhe conosco
+            </a>
+
+            <a href="#" id="PolitPrivacidadeFt">
+                Política de privacidade
+            </a>
+
+        </nav>
+
+    </footer>
+
+</body>
+</html>
